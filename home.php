@@ -40,7 +40,7 @@ if (@$_SESSION[$GLOBALS['fw_sistem']]['username'] == '') {
         <!--<![endif]-->
         <head>
             <meta charset="utf-8" />
-            <title>iDEC | SEAShell 4.0 <?php if (in_array(@$_SESSION[$GLOBALS['fw_sistem']]['superadmin'], $GLOBALS['fw_superadmin']) || $server == $url_local) {
+            <title>MyMPP | MBSA<?php if (in_array(@$_SESSION[$GLOBALS['fw_sistem']]['superadmin'], $GLOBALS['fw_superadmin']) || $server == $url_local) {
         echo $do;
     } ?></title>
             <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />

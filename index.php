@@ -9,13 +9,14 @@ include_once 'google_login.php';
 <!--[if !IE]><!-->
 <html lang="en">
 <!--<![endif]-->
+
 <head>
 	<meta charset="utf-8" />
-	<title>iDEC | SEAShell 4.0</title>
+	<title>MyMPP | MBSA</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
+
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,142 +26,305 @@ include_once 'google_login.php';
 	<link href="assets/css/style.min.css" rel="stylesheet" />
 	<link href="assets/css/style-responsive.min.css" rel="stylesheet" />
 	<link href="assets/css/theme/default.css" rel="stylesheet" id="theme" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- ================== END BASE CSS STYLE ================== -->
-	
+
 	<!-- ================== BEGIN PAGE CSS ================== -->
 	<link href="assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
 	<!-- ================== END PAGE CSS ================== -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 </head>
-<body class="pace-top">
-	<!-- begin #page-loader -->
-	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
-	<!-- end #page-loader -->
-	
-	<div class="login-cover">
-	    <div class="login-cover-image"><img src="assets/img/login-bg/bg-1.jpg" data-id="login-cover-image" alt="" /></div>
-	    <div class="login-cover-bg"></div>
-	</div>
-	<!-- begin #page-container -->
-	<div id="page-container" class="fade">
-	    <!-- begin login -->
-        <div class="login login-v2" data-pageload-addclass="animated fadeIn">
-            <!-- begin brand -->
-            <div class="login-header">
-                <div class="brand">
-                    <span class="logo"><i class="ion-ios-cloud"></i></span> iDEC
-                    <small>SEAShell 4.0</small>
-                </div>
-                <div class="icon">
-                    <i class="ion-ios-locked"></i>
-                </div>
-            </div>
-            <!-- end brand -->
-            <div class="login-content">
-                <form action="action.check" method="POST" class="margin-bottom-0">
-                    <div class="form-group m-b-20">
-                        <input type="text" name="user" class="form-control input-lg" placeholder="Email Address" required="">
-                    </div>
-                    <div class="form-group m-b-20">
-                        <input type="password" name="pass" class="form-control input-lg" placeholder="Password" required="">
-                    </div>
-                    <div class="form-group m-b-20">
-                        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign me in</button>
-                    </div>
-                    <div class="form-group m-b-20">
-                        <button type="button" class="btn btn-block btn-lg" onclick="location.href='upmid/login.php';"><center><img class="img-responsive" src="assets/images/upmid.gif" alt=""/></center></button>
-                    </div>
-                    <div class="form-group m-b-20">
-                        <?php echo $google_api; ?>
-                    </div>
 
-                </form>
-            </div>
-        </div>
-        <!-- end login -->
-        
-        <ul class="login-bg-list clearfix">
-            <li class="active"><a href="#" data-click="change-bg"><img src="assets/img/login-bg/bg-1.jpg" alt="" /></a></li>
-            <li><a href="#" data-click="change-bg"><img src="assets/img/login-bg/bg-2.jpg" alt="" /></a></li>
-            <li><a href="#" data-click="change-bg"><img src="assets/img/login-bg/bg-3.jpg" alt="" /></a></li>
-            <li><a href="#" data-click="change-bg"><img src="assets/img/login-bg/bg-4.jpg" alt="" /></a></li>
-            <li><a href="#" data-click="change-bg"><img src="assets/img/login-bg/bg-5.jpg" alt="" /></a></li>
-            <li><a href="#" data-click="change-bg"><img src="assets/img/login-bg/bg-6.jpg" alt="" /></a></li>
-        </ul>
-        
-        <!-- begin theme-panel -->
-        <div class="theme-panel">
-            <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="ion-ios-cog"></i></a>
-            <div class="theme-panel-content">
-                <h5 class="m-t-0">Color Theme</h5>
-                <ul class="theme-list clearfix">
-                    <li class="active"><a href="javascript:;" class="bg-blue" data-theme="default" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Default">&nbsp;</a></li>
-                    <li><a href="javascript:;" class="bg-purple" data-theme="purple" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Purple">&nbsp;</a></li>
-                    <li><a href="javascript:;" class="bg-green" data-theme="green" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Green">&nbsp;</a></li>
-                    <li><a href="javascript:;" class="bg-orange" data-theme="orange" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Orange">&nbsp;</a></li>
-                    <li><a href="javascript:;" class="bg-red" data-theme="red" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Red">&nbsp;</a></li>
-                    <li><a href="javascript:;" class="bg-black" data-theme="black" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Black">&nbsp;</a></li>
-                </ul>
-                <div class="divider"></div>
-                <div class="row m-t-10">
-                    <div class="col-md-5 control-label double-line">Header Styling</div>
-                    <div class="col-md-7">
-                        <select name="header-styling" class="form-control input-sm">
-                            <option value="1">default</option>
-                            <option value="2">inverse</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row m-t-10">
-                    <div class="col-md-5 control-label">Header</div>
-                    <div class="col-md-7">
-                        <select name="header-fixed" class="form-control input-sm">
-                            <option value="1">fixed</option>
-                            <option value="2">default</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row m-t-10">
-                    <div class="col-md-5 control-label double-line">Sidebar Styling</div>
-                    <div class="col-md-7">
-                        <select name="sidebar-styling" class="form-control input-sm">
-                            <option value="1">default</option>
-                            <option value="2">grid</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row m-t-10">
-                    <div class="col-md-5 control-label">Sidebar</div>
-                    <div class="col-md-7">
-                        <select name="sidebar-fixed" class="form-control input-sm">
-                            <option value="1">fixed</option>
-                            <option value="2">default</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row m-t-10">
-                    <div class="col-md-5 control-label double-line">Sidebar Gradient</div>
-                    <div class="col-md-7">
-                        <select name="content-gradient" class="form-control input-sm">
-                            <option value="1">disabled</option>
-                            <option value="2">enabled</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row m-t-10">
-                    <div class="col-md-12">
-                        <a href="#" class="btn btn-inverse btn-block btn-sm" data-click="reset-local-storage"><i class="ion-refresh m-r-3"></i> Reset Local Storage</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end theme-panel -->
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		background: linear-gradient(135deg, #007aff 0%, #007aff 100%);
+		min-height: 100vh;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+	}
+
+	.main-container {
+		background: #ffffff;
+		border-radius: 24px;
+		max-width: 900px;
+		width: 100%;
+		min-height: 500px;
+		display: flex;
+		overflow: hidden;
+		box-shadow: 0 20px 60px rgba(91, 95, 237, 0.3);
+	}
+
+	.left-section {
+		flex: 1;
+		padding: 60px 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.right-section {
+		flex: 1;
+		background: linear-gradient(135deg, #F8F9FF 0%, #E8EAFF 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 40px;
+		position: relative;
+	}
+
+	.logo-title {
+		font-size: 32px;
+		font-weight: 700;
+		color: #2D3748;
+		margin-bottom: 40px;
+	}
+
+	.form-group {
+		margin-bottom: 24px;
+	}
+
+	.form-label {
+		display: block;
+		margin-bottom: 8px;
+		color: #6B7280;
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.form-control {
+		width: 100%;
+		height: 48px;
+		padding: 12px 16px;
+		border: 2px solid #E5E7EB;
+		border-radius: 12px;
+		font-size: 16px;
+		background: #F9FAFB;
+		transition: all 0.3s ease;
+		outline: none;
+	}
+
+	.form-control:focus {
+		border-color: #004394;
+		background: #ffffff;
+		box-shadow: 0 0 0 3px rgba(0, 67, 148, 0.1);
+	}
+
+	.password-container {
+		position: relative;
+	}
+
+	.password-toggle {
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		color: #9CA3AF;
+		cursor: pointer;
+		font-size: 18px;
+	}
+
+	.forgot-password {
+		text-align: right;
+		margin-top: 8px;
+	}
+
+	.forgot-password a {
+		color: #004394;
+		text-decoration: none;
+		font-size: 14px;
+	}
+
+	.forgot-password a:hover {
+		text-decoration: underline;
+	}
+
+	.remember-me {
+		display: flex;
+		align-items: center;
+		margin: 20px 0;
+	}
+
+	.remember-me input[type="checkbox"] {
+		margin-right: 8px;
+		transform: scale(1.1);
+	}
+
+	.remember-me label {
+		color: #6B7280;
+		font-size: 14px;
+		cursor: pointer;
+	}
+
+	.btn-login {
+		width: 100%;
+		height: 48px;
+		background: #004394;
+		color: white;
+		border: none;
+		border-radius: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		margin-bottom: 24px;
+	}
+
+	.btn-login:hover {
+		background: #003366;
+		transform: translateY(-1px);
+		box-shadow: 0 8px 25px rgba(0, 67, 148, 0.3);
+	}
+
+	.signup-link {
+		text-align: center;
+		color: #6B7280;
+		font-size: 14px;
+	}
+
+	.signup-link a {
+		color: #004394;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.signup-link a:hover {
+		text-decoration: underline;
+	}
+
+	.illustration {
+		width: 100%;
+		height: 300px;
+		margin-bottom: 30px;
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+	}
+
+	.illustration img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.illustration-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, rgba(0, 67, 148, 0.7) 0%, rgba(91, 95, 237, 0.6) 100%);
+	}
+
+	.illustration-title {
+		font-size: 24px;
+		font-weight: 700;
+		color: #2D3748;
+		text-align: center;
+		margin-bottom: 12px;
+	}
+
+	.illustration-text {
+		font-size: 14px;
+		color: #6B7280;
+		text-align: center;
+		line-height: 1.5;
+		max-width: 280px;
+	}
+
+	.copyright {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #6B7280;
+		font-size: 11px;
+		text-align: center;
+		white-space: nowrap;
+	}
+
+	@media (max-width: 768px) {
+		.main-container {
+			flex-direction: column;
+			margin: 10px;
+			border-radius: 16px;
+		}
+
+		.left-section {
+			padding: 40px 30px;
+		}
+
+		.right-section {
+			display: none;
+		}
+
+		.copyright {
+			position: static;
+			transform: none;
+			margin-top: 30px;
+			text-align: center;
+			color: rgba(255, 255, 255, 0.8);
+		}
+	}
+</style>
+<!-- New Login Page Design - Start -->
+
+<body>
+	<div class="main-container">
+		<div class="left-section">
+			<h1 class="logo-title">MyMPP | MBSA</h1>
+			<form action="action.check" method="POST" id="loginForm">
+				<div class="form-group">
+					<label class="form-label">No.Kad Pengenalan</label>
+					<input type="text" class="form-control" id="nokadpengenalan" name="user" placeholder="No.Kad Pengenalan" required>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Kata Laluan</label>
+					<input type="password" class="form-control" id="katalaluan" name="pass" placeholder="Password" required>
+					<button type="button" class="password-toggle" onclick="togglePassword()">
+						<i class="fa fa-eye" id="toggleIcon"></i>
+					</button>
+				</div>
+				<button type="submit" class="btn-login">Log Masuk</button>
+				<!-- <div class="signup-link">
+					Tidak mempunyai akaun? <a href="#">Daftar Akaun Baharu</a>
+				</div> -->
+			</form>
+		</div>
+
+		<div class="right-section">
+			<div class="illustration">
+				<img src="assets/images/bg-image/temp_bg.jpg" alt="temp">
+				<div class="illustration-overlay"></div>
+			</div>
+
+			<h2 class="illustration-title">Selamat Datang Ke Sistem MyMPP</h2>
+			<p class="illustration-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin quam at orci porttitor interdum.
+			</p>
+
+			<div class="copyright">
+				© Hak Milik Jabatan Digital & Teknologi Maklumat MBSA
+			</div>
+		</div>
 	</div>
-	<!-- end page container -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>
 	<script src="assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
@@ -173,8 +337,10 @@ include_once 'google_login.php';
 	<![endif]-->
 	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
-	
+
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 	<script src="assets/js/login-v2.demo.min.js"></script>
 	<script src="assets/js/apps.min.js"></script>
@@ -186,5 +352,43 @@ include_once 'google_login.php';
 			LoginV2.init();
 		});
 	</script>
+	<script>
+		function togglePassword() {
+			const passwordField = document.getElementById('katalaluan');
+			const toggleIcon = document.getElementById('toggleIcon');
+
+			if (passwordField.type === 'password') {
+				passwordField.type = 'text';
+				toggleIcon.className = 'fa fa-eye-slash';
+			} else {
+				passwordField.type = 'password';
+				toggleIcon.className = 'fa fa-eye';
+			}
+		}
+
+		$(document).ready(function() {
+			$('#loginForm').on('submit', function(e) {
+				e.preventDefault();
+
+				var nokadpengenalan = $('#nokadpengenalan').val();
+				var katalaluan = $('#katalaluan').val();
+
+				if (nokadpengenalan && katalaluan) {
+					$('.btn-login').text('Sedang memproses...');
+					$('.btn-login').prop('disabled', true);
+
+					setTimeout(function() {
+						alert('Demo: Log masuk berjaya!\nNo. Kad: ' + nokadpengenalan);
+						$('.btn-login').text('Log Masuk');
+						$('.btn-login').prop('disabled', false);
+						$('#loginForm')[0].reset();
+					}, 2000);
+				} else {
+					alert('Sila isi semua medan yang diperlukan.');
+				}
+			});
+		});
+	</script>
 </body>
+<!-- New Login Page Design - End -->
 </html>
